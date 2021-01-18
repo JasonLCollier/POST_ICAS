@@ -13,15 +13,16 @@ namespace POST_RulesLab
         const string FILENAME = "D:/Users/jason/Downloads/POST/dummy_input.xml";
         static void Main(string[] args)
         {
-            Request request = new Request();
+            // Option 1: Read object into XML, then POST
 
-            String inputXml = objectToXMLString(request);
-            //String inputXml = getTextFromXMLFile(FILENAME);
-            Console.WriteLine(inputXml);
+            //Request request = new Request();
+            //String inputXml = objectToXMLString(request);
 
-            //String output = postXMLData(URL, inputXml);
+            // Option 2: Read XML from file, then POST
+            String inputXml = getTextFromXMLFile(FILENAME);
+            String output = postXMLData(URL, inputXml);
 
-            //Console.WriteLine(output);
+            Console.WriteLine(output);
             Console.ReadLine();
         }
 
